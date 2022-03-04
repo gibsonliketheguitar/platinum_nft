@@ -1,10 +1,17 @@
-import React from "react";
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-export default function Btn({ title }: any) {
+interface IBtn {
+    title: string,
+    handleOnPress?: () => void,
+}
+
+export default function Btn({ title, handleOnPress }: IBtn) {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>{'test'}</Text>
+            <TouchableOpacity style={styles.button} onPress={() => handleOnPress}>
+                <Text style={styles.title}>{title}</Text>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -13,19 +20,17 @@ export default function Btn({ title }: any) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 24,
-        backgroundColor: "#eaeaea"
+        padding: 28,
+    },
+    button: {
+        backgroundColor: "#506CCB",
+        paddingVertical: 16,
+        borderRadius: 8,
+        overflow: 'hidden',
     },
     title: {
-        marginTop: 16,
-        paddingVertical: 8,
-        borderWidth: 4,
-        borderColor: "#20232a",
-        borderRadius: 6,
-        backgroundColor: "#61dafb",
-        color: "#20232a",
         textAlign: "center",
-        fontSize: 30,
-        fontWeight: "bold"
+        fontSize: 12,
+        color: "#FFFFFF",
     }
 });
