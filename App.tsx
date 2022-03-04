@@ -6,24 +6,21 @@ import {
   useColorScheme,
 } from 'react-native';
 
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
 import Btn from './src/common/Btn';
+import HomeCard from './src/components/HomeCard';
+import HomeContent from './src/components/HomeContent';
+import HomeHeader from './src/components/HomeHeader';
 
 
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: false ? Colors.darker : Colors.lighter,
-  };
-
   return (
-    <SafeAreaView style={[backgroundStyle, styles.container]}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <Btn title='Next' />
+    <SafeAreaView style={styles.container}>
+      <HomeHeader />
+      <HomeContent />
+      <HomeCard />
     </SafeAreaView>
   );
 };
@@ -32,7 +29,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    padding: 20,
+    backgroundColor: '#161929'
   },
 });
 

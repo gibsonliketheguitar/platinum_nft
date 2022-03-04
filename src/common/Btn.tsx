@@ -19,8 +19,7 @@ export default function Btn({ title, handleOnPress }: IBtn) {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        padding: 28,
+        width: '100%', //why isn't flex working 
     },
     button: {
         backgroundColor: "#506CCB",
