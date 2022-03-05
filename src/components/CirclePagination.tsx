@@ -1,5 +1,5 @@
 import React from "react";
-import { Animated, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 const CURR_DOT_SIZE = 10
 const DOT_SIZE = 8
@@ -10,13 +10,18 @@ interface ICirclePag {
     currIndex: number
 }
 
+//[ ] TODO figure out how to do the dots
+//https://github.com/Harin-Forks/react-native-animated-pagination-dots/blob/main/src/dots/ExpandingDot.tsx
 export default function CirclePagination({ cards, currIndex }: ICirclePag) {
     return (
-        <Animated.View style={styles.container}>
+        <View style={styles.container}>
             {cards.map((_, index) => {
-                return <View key={index} style={index === currIndex ? styles.currDot : styles.dot} />
+                return <View
+                    key={index}
+                    style={[styles.dot, (index === currIndex) ? styles.currDot : {}]}
+                />
             })}
-        </Animated.View>
+        </View>
     )
 }
 

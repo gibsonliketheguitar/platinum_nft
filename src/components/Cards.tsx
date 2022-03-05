@@ -35,7 +35,7 @@ const Card2 = () => {
             exiting={SlideOutRight}
             layout={Layout.springify()}
         >
-            <Text style={styles.h2} > Store your{"\n"}NFT collection1</Text >
+            <Text style={styles.h2} > Store your{"\n"}NFT collection2</Text >
             <Text style={styles.h3}>This is a subtext that describes this{"\n"}feature in a better way</Text>
         </Animated.View>
     )
