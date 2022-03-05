@@ -1,5 +1,6 @@
 import React from "react"
 import { StyleSheet, Text } from "react-native"
+import Animated, { Layout, SlideInLeft, SlideOutRight } from "react-native-reanimated"
 
 interface ICards {
     currIndex: number,
@@ -8,34 +9,48 @@ interface ICards {
 export default function Cards({ currIndex }: ICards) {
     const Cards = [<Card1 />, <Card2 />, <Card3 />]
     return (
-        <>{Cards[currIndex]}</>
+        <>
+            {Cards[currIndex]}
+        </>
     )
 }
 
 const Card1 = () => {
     return (
-        <>
+        <Animated.View
+            entering={SlideInLeft.delay(100)}
+            exiting={SlideOutRight}
+            layout={Layout.springify()}
+        >
             <Text style={styles.h2} > Store your{"\n"}NFT collection1</Text >
             <Text style={styles.h3}>This is a subtext that describes this{"\n"}feature in a better way</Text>
-        </>
+        </Animated.View>
     )
 }
 
 const Card2 = () => {
     return (
-        <>
-            <Text style={styles.h2} > Store your{"\n"}NFT collection2</Text >
+        <Animated.View
+            entering={SlideInLeft.delay(100)}
+            exiting={SlideOutRight}
+            layout={Layout.springify()}
+        >
+            <Text style={styles.h2} > Store your{"\n"}NFT collection1</Text >
             <Text style={styles.h3}>This is a subtext that describes this{"\n"}feature in a better way</Text>
-        </>
+        </Animated.View>
     )
 }
 
 const Card3 = () => {
     return (
-        <>
+        <Animated.View
+            entering={SlideInLeft.delay(100)}
+            exiting={SlideOutRight}
+            layout={Layout.springify()}
+        >
             <Text style={styles.h2} > Store your{"\n"}NFT collection3</Text >
             <Text style={styles.h3}>This is a subtext that describes this{"\n"}feature in a better way</Text>
-        </>
+        </Animated.View>
     )
 }
 

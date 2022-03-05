@@ -20,8 +20,6 @@ export default function HomeCard() {
     )
 }
 
-
-
 //TODO use creatively solve the border card issue
 const styles = StyleSheet.create({
     container: {
