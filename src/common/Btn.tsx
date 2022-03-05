@@ -8,20 +8,19 @@ interface IBtn {
 
 export default function Btn({ title, handleOnPress }: IBtn) {
     return (
-        <View style={styles.container}>
-            <TouchableOpacity style={styles.button} onPress={() => handleOnPress}>
-                <Text style={styles.title}>{title}</Text>
-            </TouchableOpacity>
-        </View>
+        <TouchableOpacity style={styles.button} onPress={handleOnPress}>
+            <Text style={styles.title}>{title}</Text>
+        </TouchableOpacity>
     )
 }
 
 
 const styles = StyleSheet.create({
-    container: {
-        width: '100%', //why isn't flex working 
-    },
     button: {
+        width: '100%',
+        height: 48,
+        justifyContent: 'center',
+        alignItems: 'center',
         backgroundColor: "#506CCB",
         paddingVertical: 16,
         borderRadius: 8,
